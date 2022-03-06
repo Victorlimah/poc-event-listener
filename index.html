@@ -42,13 +42,36 @@
             placeholder="Ou foca em mim"
           />
         </article>
-        <article id="e2" class="blur hidden"></article>
-        <article id="e3" class="change hidden"></article>
-        <article id="e4" class="keypress hidden"></article>
-        <article id="e5" class="load hidden"></article>
-        <article id="e6" class="mouseover hidden"></article>
-        <article id="e7" class="mouseout hidden"></article>
-        <article id="e8" class="onsubmit hidden"></article>
+
+        <!-- ARTICLE CHANGE-->
+        <article id="e2" class="change hidden">
+          <h2>Change</h2>
+          <p>
+            Quando ocorrer o evento de troca no elemento abaixo irá mudar seu
+            innerHTML e mostrar um alert.
+          </p>
+
+          <select class="elemento-select">
+            <option value="none">Selecione</option>
+            <option value="Marquin">Marquin</option>
+            <option value="Lucaxas">Lucaxas</option>
+            <option value="Vitão">Vitão</option>
+          </select>
+
+          <span class="textSelect">Ainda não foi mudaram a seleção </span>
+        </article>
+
+        <!-- ARTICLE KEYPRESS-->
+        <article id="e3" class="keypress hidden"></article>
+
+        <!-- ARTICLE LOAD-->
+        <article id="e4" class="load hidden"></article>
+
+        <!-- ARTICLE MOUSE OVER /  MOUSE OUT-->
+        <article id="e5" class="mouse hidden"></article>
+
+        <!-- ARTICLE SUBMIT-->
+        <article id="e6" class="submit hidden"></article>
       </div>
 
       <ion-icon class="next" name="chevron-forward-outline"></ion-icon>
@@ -65,7 +88,7 @@ function alertClick(){
 }</code></pre>
     </section>
 
-    <!-- CODE FOCUS-->
+    <!-- CODE FOCUS / BLUR-->
     <section id="e1" class="hidden">
       <pre><code>const elementFocus = document.querySelector(".elemento-focus");
 
@@ -81,6 +104,19 @@ function alertblur() {
   elementFocus.classList.remove("focado");
   elementFocus.classList.add("desfocado");
 }</code></pre>
+    </section>
+
+    <!-- CODE CHANGE -->
+    <section id="e2" class="hidden">
+      <pre><code>  const elementChange = document.querySelector(".elemento-select");
+          
+  elementChange.addEventListener("change", alertChange);
+
+  function alertChange() {
+    alert("Trocaram a seleção");
+    const text = document.querySelector(".textSelect");
+    text.innerHTML = `${elementChange.value} foi selecionado.`;
+  }</code></pre>
     </section>
 
     <script
