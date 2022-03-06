@@ -12,10 +12,38 @@
     <div class="container">
       <ion-icon name="chevron-back-outline"></ion-icon>
 
-      <div class="content"></div>
+      <div class="content">
+        <article class="click">
+          <h2>Click</h2>
+          <p>
+            Quando ocorrer o evento clique no elemento abaixo irá aparecer um
+            alert.
+          </p>
+          <div class="elemento-click">Clique em mim</div>
+        </article>
+        <article class="focus hidden"></article>
+        <article class="blur hidden"></article>
+        <article class="change hidden"></article>
+        <article class="keypress hidden"></article>
+        <article class="load hidden"></article>
+        <article class="mouseover hidden"></article>
+        <article class="mouseout hidden"></article>
+        <article class="onsubmit hidden"></article>
+      </div>
 
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </div>
+
+    <section id="0">
+      <pre><code>const elementClick = document.querySelector(".elemento-click");
+
+elementClick.addEventListener("click", alertClick);
+
+function alertClick(){
+    alert("Você clicou na parada")
+}</code></pre>
+    </section>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
