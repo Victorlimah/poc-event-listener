@@ -10,10 +10,11 @@
   </head>
   <body>
     <div class="container">
-      <ion-icon name="chevron-back-outline"></ion-icon>
+      <ion-icon class="previous" name="chevron-back-outline"></ion-icon>
 
       <div class="content">
-        <article class="click">
+        <!-- ARTICLE CLICK-->
+        <article id="e0" class="click">
           <h2>Click</h2>
           <p>
             Quando ocorrer o evento clique no elemento abaixo irá aparecer um
@@ -21,26 +22,64 @@
           </p>
           <div class="elemento-click">Clique em mim</div>
         </article>
-        <article class="focus hidden"></article>
-        <article class="blur hidden"></article>
-        <article class="change hidden"></article>
-        <article class="keypress hidden"></article>
-        <article class="load hidden"></article>
-        <article class="mouseover hidden"></article>
-        <article class="mouseout hidden"></article>
-        <article class="onsubmit hidden"></article>
+
+        <!-- ARTICLE FOCUS / BLUR-->
+        <article id="e1" class="focus hidden">
+          <h2>Focus / Blur</h2>
+          <p>
+            Quando ocorrer o evento foco ou desfoco no elemento abaixo irá mudar
+            seu background color.
+          </p>
+
+          <input
+            class="elemento-focus-1"
+            type="text"
+            placeholder="Foca em mim"
+          />
+          <input
+            class="elemento-focus-2"
+            type="text"
+            placeholder="Ou foca em mim"
+          />
+        </article>
+        <article id="e2" class="blur hidden"></article>
+        <article id="e3" class="change hidden"></article>
+        <article id="e4" class="keypress hidden"></article>
+        <article id="e5" class="load hidden"></article>
+        <article id="e6" class="mouseover hidden"></article>
+        <article id="e7" class="mouseout hidden"></article>
+        <article id="e8" class="onsubmit hidden"></article>
       </div>
 
-      <ion-icon name="chevron-forward-outline"></ion-icon>
+      <ion-icon class="next" name="chevron-forward-outline"></ion-icon>
     </div>
 
-    <section id="0">
+    <!-- CODE CLICK-->
+    <section id="e0">
       <pre><code>const elementClick = document.querySelector(".elemento-click");
 
 elementClick.addEventListener("click", alertClick);
 
 function alertClick(){
-    alert("Você clicou na parada")
+    alert("Você clicou na parada");
+}</code></pre>
+    </section>
+
+    <!-- CODE FOCUS-->
+    <section id="e1" class="hidden">
+      <pre><code>const elementFocus = document.querySelector(".elemento-focus");
+
+elementFocus.addEventListener("focus", alertFocus);
+elementFocus.addEventListener("blur", alertblur);
+
+function alertFocus() {
+  elementFocus.classList.remove("desfocado");
+  elementFocus.classList.add("focado");
+}
+
+function alertblur() {
+  elementFocus.classList.remove("focado");
+  elementFocus.classList.add("desfocado");
 }</code></pre>
     </section>
 

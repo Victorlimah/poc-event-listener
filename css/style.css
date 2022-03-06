@@ -78,6 +78,14 @@ article p {
   border-radius: 12px;
   color: white;
 }
+
+.desfocado {
+  background: red;
+}
+.focado {
+  background: green;
+}
+
 .hidden {
   display: none;
 }
