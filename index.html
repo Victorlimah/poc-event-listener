@@ -89,12 +89,26 @@
         </article>
 
         <!-- ARTICLE MOUSE OVER /  MOUSE OUT-->
-        <article id="e4" class="mouse hidden"></article>
+        <article id="e4" class="mouse hidden">
+          <h2>mouseover / mouseout</h2>
 
-        <!-- ARTICLE SUBMIT-->
-        <article id="e5" class="submit hidden"></article>
+          <div class="keys">
+            <h3>mouseover</h3>
+            <p>
+              O evento onmouseover ocorre quando o ponteiro do mouse é movido
+              para um elemento ou para um de seus filhos.
+            </p>
+
+            <h3>mouseout</h3>
+            <p>
+              O evento ocorre quando o ponteiro do mouse é movido para fora de
+              um elemento ou de um de seus filhos.
+            </p>
+
+            <span class="mouse-over-out">Não sei onde o mouse tá</span>
+          </div>
+        </article>
       </div>
-
       <ion-icon class="next" name="chevron-forward-outline"></ion-icon>
     </div>
 
@@ -165,11 +179,27 @@ function alertblur() {
       document.querySelector(".f-press").innerHTML = "F foi pressionado";
     }
   }
-  
+
   function unPressF() {
     if (event.keyCode === 70) {
       document.querySelector(".f-press").innerHTML = "F foi solto";
     }
+  }</code></pre>
+    </section>
+
+    <!-- CODE MOUSE -->
+    <section id="e4" class="hidden">
+      <pre><code>     const elementMouse = document.querySelector(".mouse-over-out");
+
+  elementMouse.addEventListener("mouseover", mouseOver);
+  elementMouse.addEventListener("mouseout", mouseOut);
+
+  function mouseOver() {
+    elementMouse.innerHTML = "O mouse tá aqui dentro";
+  }
+
+  function mouseOut() {
+    elementMouse.innerHTML = "O mouse saiu daqui pô";
   }</code></pre>
     </section>
 

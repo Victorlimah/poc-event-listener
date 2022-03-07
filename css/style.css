@@ -60,7 +60,7 @@ ion-icon {
 
 section {
   width: 50%;
-  margin-top: 50px;
+  margin: 50px 0 50px 0;
   background-color: #451776;
   color: #e6e1ef;
   padding: 20px;

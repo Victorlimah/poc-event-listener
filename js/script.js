@@ -23,7 +23,7 @@ function previousElement() {
 }
 
 function nextElement() {
-  if (count === 5) {
+  if (count === 4) {
     alert("Não tem próximo elemento!");
     return false;
   } else {
@@ -120,8 +120,24 @@ function keys() {
     }
   }
 }
+
+function mouse() {
+  const elementMouse = document.querySelector(".mouse-over-out");
+
+  elementMouse.addEventListener("mouseover", mouseOver);
+  elementMouse.addEventListener("mouseout", mouseOut);
+
+  function mouseOver() {
+    elementMouse.innerHTML = "O mouse tá aqui dentro";
+  }
+
+  function mouseOut() {
+    elementMouse.innerHTML = "O mouse saiu daqui pô";
+  }
+}
 // CHAMANDO FUNÇÕES
 click();
 focus();
 change();
 keys();
+mouse();
