@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbling</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #pai {
+        width: 500px;
+        height: 500px;
+        background-color: blue;
+      }
+      #filho {
+        width: 370px;
+        height: 370px;
+        background-color: purple;
+      }
+      #neto {
+        width: 180px;
+        height: 180px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pai">
+      pai
+      <div id="filho">
+        filho
+        <div id="neto">neto</div>
+      </div>
+    </div>
+
+    <script src="./js/bubble.js"></script>
+  </body>
+</html>
