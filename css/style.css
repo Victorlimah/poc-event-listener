@@ -14,6 +14,27 @@ body {
   overflow-x: hidden;
 }
 
+.keys {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keys h3 {
+  font-size: 18px;
+  margin: 12px 0 10px 0;
+  font-weight: 700;
+}
+
+.keys span {
+  background-color: purple;
+  color: #e6e1ef;
+  font-size: 15px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 12px;
+}
 .container {
   width: 50%;
   height: 600px;

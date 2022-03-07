@@ -1,4 +1,4 @@
-let count = 0;
+let count = 0; // CONTA EM QUAL ARTICLE VC TÁ
 
 // PREVIOUS AND NEXT //
 const previous = document.querySelector(".previous");
@@ -23,7 +23,7 @@ function previousElement() {
 }
 
 function nextElement() {
-  if (count === 6) {
+  if (count === 5) {
     alert("Não tem próximo elemento!");
     return false;
   } else {
@@ -90,7 +90,38 @@ function change() {
     text.innerHTML = `${elementChange.value} foi selecionado.`;
   }
 }
+
+// FUNCTION KEYS //
+function keys() {
+  document.addEventListener("keypress", pressEnter);
+  document.addEventListener("keydown", pressF);
+  document.addEventListener("keyup", unPressF);
+  function pressEnter() {
+    if (event.keyCode === 13) {
+      const elementEnter = document.querySelector(".enter-press");
+
+      if (elementEnter.classList.contains("pressionado")) {
+        elementEnter.innerHTML = "Enter foi despressionado";
+        elementEnter.classList.remove("pressionado");
+      } else {
+        elementEnter.classList.add("pressionado");
+        elementEnter.innerHTML = "Enter foi pressionado";
+      }
+    }
+  }
+  function pressF() {
+    if (event.keyCode === 70) {
+      document.querySelector(".f-press").innerHTML = "F foi pressionado";
+    }
+  }
+  function unPressF() {
+    if (event.keyCode === 70) {
+      document.querySelector(".f-press").innerHTML = "F foi solto";
+    }
+  }
+}
 // CHAMANDO FUNÇÕES
 click();
 focus();
 change();
+keys();

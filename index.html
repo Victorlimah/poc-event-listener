@@ -62,16 +62,37 @@
         </article>
 
         <!-- ARTICLE KEYPRESS-->
-        <article id="e3" class="keypress hidden"></article>
+        <article id="e3" class="keypress hidden">
+          <h2>keypress / keydown / keyup</h2>
 
-        <!-- ARTICLE LOAD-->
-        <article id="e4" class="load hidden"></article>
+          <div class="keys">
+            <h3>keypress</h3>
+            <p>
+              O evento onkeypress ocorre quando o usuário pressiona uma tecla.
+              (Defini o enter)
+            </p>
+            <span class="enter-press">Enter ainda não foi pressionado</span>
+
+            <h3>keydown</h3>
+            <p>
+              O evento keydown ocorre quando o usuário está pressionando uma
+              tecla (defini o F).
+            </p>
+
+            <h3>keyup</h3>
+            <p>
+              O evento onkeyup ocorre quando o usuário libera uma tecla (defini
+              o F).
+            </p>
+            <span class="f-press">F ainda não foi pressionado</span>
+          </div>
+        </article>
 
         <!-- ARTICLE MOUSE OVER /  MOUSE OUT-->
-        <article id="e5" class="mouse hidden"></article>
+        <article id="e4" class="mouse hidden"></article>
 
         <!-- ARTICLE SUBMIT-->
-        <article id="e6" class="submit hidden"></article>
+        <article id="e5" class="submit hidden"></article>
       </div>
 
       <ion-icon class="next" name="chevron-forward-outline"></ion-icon>
@@ -116,6 +137,39 @@ function alertblur() {
     alert("Trocaram a seleção");
     const text = document.querySelector(".textSelect");
     text.innerHTML = `${elementChange.value} foi selecionado.`;
+  }</code></pre>
+    </section>
+
+    <!-- CODE KEYS -->
+    <section id="e3" class="hidden">
+      <pre><code>    document.addEventListener("keypress", pressEnter);
+  document.addEventListener("keydown", pressF);
+  document.addEventListener("keyup", unPressF);
+  
+  function pressEnter() {
+    if (event.keyCode === 13) {
+      const elementEnter = document.querySelector(".enter-press");
+
+      if (elementEnter.classList.contains("pressionado")) {
+        elementEnter.innerHTML = "Enter foi despressionado";
+        elementEnter.classList.remove("pressionado");
+      } else {
+        elementEnter.classList.add("pressionado");
+        elementEnter.innerHTML = "Enter foi pressionado";
+      }
+    }
+  }
+
+  function pressF() {
+    if (event.keyCode === 70) {
+      document.querySelector(".f-press").innerHTML = "F foi pressionado";
+    }
+  }
+  
+  function unPressF() {
+    if (event.keyCode === 70) {
+      document.querySelector(".f-press").innerHTML = "F foi solto";
+    }
   }</code></pre>
     </section>
 
