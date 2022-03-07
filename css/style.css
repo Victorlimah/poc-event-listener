@@ -14,6 +14,27 @@ body {
   overflow-x: hidden;
 }
 
+.focus input {
+  border: 2px solid #3d1365;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.focus input::placeholder,
+option {
+  color: #3d1365;
+}
+
+.change select {
+  width: 200px;
+  border: 2px solid #3d1365;
+  padding: 15px;
+  border-radius: 12px;
+  color: #3d1365;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .keys {
   margin-top: 22px;
   display: flex;
